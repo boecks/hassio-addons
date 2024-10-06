@@ -1,9 +1,8 @@
-# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
-name: Example add-on
-version: "1.2.0"
-slug: example
-description: Example add-on
-url: "https://github.com/home-assistant/addons-example/tree/main/example"
+name: "SMTP to MQTT"
+version: "1.0.0"
+slug: smtp2mqtt
+description: "A simple, tiny, absolutely no-frills Python-based SMTP server that publishes mail to an MQTT topic then (optionally) passes the mail on to the next relay"
+url: "https://github.com/boecks/hassio-addons/tree/main/smtp2mqtt"
 arch:
   - armhf
   - armv7
@@ -13,8 +12,21 @@ arch:
 init: false
 map:
   - share:rw
-options:
-  message: "Hello world..."
 schema:
-  message: "str?"
-image: "ghcr.io/home-assistant/{arch}-addon-example"
+  mqtt_host: str?
+  mqtt_port: port?
+  mqtt_user: str?
+  mqtt_pass: password?
+  mqtt_topic: str?
+  smtp_auth_required: bool?
+  smtp_relay_host: str?
+  smtp_relay_port: port?
+  smtp_relay_user: str?
+  smtp_relay_pass: password?
+  smtp_relay_starttls: bool?
+  smtp_relay_timeout_secs: int?
+  publish_attachments: bool?
+  save_attachments: bool?
+  save_attachments_dir: str?
+  debug: bool?
+image: "ghcr.io/boecks/docker-smtp2mqtt-{arch}"
