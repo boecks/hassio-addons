@@ -1,5 +1,5 @@
 name: "SMTP to MQTT"
-version: "1.0.0"
+version: "v1.0.1"
 slug: smtp2mqtt
 description: "A simple, tiny, absolutely no-frills Python-based SMTP server that publishes mail to an MQTT topic then (optionally) passes the mail on to the next relay"
 url: "https://github.com/boecks/hassio-addons/tree/main/smtp2mqtt"
