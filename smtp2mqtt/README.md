@@ -1,5 +1,7 @@
 # Home Assistant Add-on: SMTP 2 MQTT add-on
 
+![SMTP to MQTT Logo](logo.png)
+
 Serve a local SMTP server where your IoT devices can connect to and send emails with. The SMTP Server will intercept the sent SMTP Messages and transfers them to MQTT messages which are published by your MQTT broker for further use.
 
 ![Supports aarch64 Architecture][aarch64-shield]
