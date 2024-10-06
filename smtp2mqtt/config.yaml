@@ -9,9 +9,12 @@ arch:
   - aarch64
   - amd64
   - i386
-init: false
+startup: application
+boot: auto
 map:
   - share:rw
+ports:
+  25/tcp: 8025
 schema:
   mqtt_host: str?
   mqtt_port: port?
