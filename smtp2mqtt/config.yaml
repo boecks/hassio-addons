@@ -9,8 +9,6 @@ arch:
   - aarch64
   - amd64
   - i386
-startup: application
-boot: auto
 map:
   - share:rw
 ports:
