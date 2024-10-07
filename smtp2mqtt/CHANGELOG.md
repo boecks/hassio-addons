@@ -1,3 +1,8 @@
+## [1.0.2] - 2024-10-07
+
+### Fixed
+- Correctly set addon config
+
 ## [1.0.1] - 2024-10-06
 
 - Tweak CI/CD
