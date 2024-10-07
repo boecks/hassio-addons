@@ -1,5 +1,5 @@
 name: "SMTP to MQTT"
-version: "v1.0.1"
+version: "v1.0.2"
 slug: smtp2mqtt
 description: "Transform SMTP to MQTT"
 url: "https://github.com/boecks/hassio-addons/tree/main/smtp2mqtt"
@@ -17,6 +17,8 @@ options:
   mqtt_host: "localhost"
   mqtt_port: 1883
   mqtt_topic: "smtp2mqtt"
+  smtp_auth_required: false
+  debug: false
 schema:
   mqtt_host: str
   mqtt_port: port
@@ -35,3 +37,21 @@ schema:
   save_attachments_dir: str?
   debug: bool?
 image: "ghcr.io/boecks/docker-smtp2mqtt-{arch}"
+
+environment:
+  - MQTT_HOST: "!mqtt_host"
+  - MQTT_PORT: "!mqtt_port"
+  - MQTT_USER: "!mqtt_user"
+  - MQTT_PASS: "!mqtt_pass"
+  - MQTT_TOPIC: "!mqtt_topic"
+  - SMTP_AUTH_REQUIRED: "!smtp_auth_required"
+  - SMTP_RELAY_HOST: "!smtp_relay_host"
+  - SMTP_RELAY_PORT: "!smtp_relay_port"
+  - SMTP_RELAY_USER: "!smtp_relay_user"
+  - SMTP_RELAY_PASS: "!smtp_relay_pass"
+  - SMTP_RELAY_STARTTLS: "!smtp_relay_starttls"
+  - SMTP_RELAY_TIMEOUT_SECS: "!smtp_relay_timeout_secs"
+  - PUBLISH_ATTACHMENTS: "!publish_attachments"
+  - SAVE_ATTACHMENTS: "!save_attachments"
+  - SAVE_ATTACHMENTS_DIR: "!save_attachments_dir"
+  - DEBUG: "!debug"
