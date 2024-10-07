@@ -1,7 +1,7 @@
 ## [1.0.2] - 2024-10-07
 
 ### Fixed
-- Correctly set addon config
+- Correctly set addon config with run.sh
 
 ## [1.0.1] - 2024-10-06
 
