@@ -1,5 +1,5 @@
 name: "SMTP to MQTT"
-version: "v1.0.1-dev"
+version: "v1.0.1"
 slug: smtp2mqtt
 description: "Transform SMTP to MQTT"
 url: "https://github.com/boecks/hassio-addons/tree/main/smtp2mqtt"
