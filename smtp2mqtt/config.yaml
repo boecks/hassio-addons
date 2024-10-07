@@ -1,7 +1,7 @@
 name: "SMTP to MQTT"
-version: "v1.0.1"
+version: "v1.0.1-dev"
 slug: smtp2mqtt
-description: "A simple, tiny, absolutely no-frills Python-based SMTP server that publishes mail to an MQTT topic then (optionally) passes the mail on to the next relay"
+description: "Transform SMTP to MQTT"
 url: "https://github.com/boecks/hassio-addons/tree/main/smtp2mqtt"
 arch:
   - armhf
@@ -12,13 +12,17 @@ arch:
 map:
   - share:rw
 ports:
-  25/tcp: 8025
+  25/tcp: 25
+options:
+  mqtt_host: "localhost"
+  mqtt_port: 1883
+  mqtt_topic: "smtp2mqtt"
 schema:
-  mqtt_host: str?
-  mqtt_port: port?
+  mqtt_host: str
+  mqtt_port: port
+  mqtt_topic: str
   mqtt_user: str?
   mqtt_pass: password?
-  mqtt_topic: str?
   smtp_auth_required: bool?
   smtp_relay_host: str?
   smtp_relay_port: port?
